@@ -1,0 +1,15 @@
+#
+# Peter R. Elespuru
+#
+# This makefile is for OS X (uname = 'Darwin'), and should
+# be automatically called by the main makefile on that platform.
+# If that doesn't work, it can be used directly too via make -f Makefile.Darwin
+#
+all:
+	gcc -Wall -O3 -o cvglsl *.c -framework GLUT -framework OpenGL -lopencv_core -lopencv_contrib -lopencv_flann -lopencv_features2d -lopencv_highgui -lopencv_imgproc -lopencv_gpu
+
+#
+###  Clean up
+#
+clean:
+	rm -f cvglsl
